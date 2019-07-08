@@ -14,6 +14,3 @@ done < ./url_list.txt
 echo ${http_code[@]}
 echo ""
 echo ${ssl_result[@]}
-
-
-#bash check_ssl_certs.sh revoked.badssl.com 2>/dev/null | tail -n 2 |grep Verify
