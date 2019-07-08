@@ -102,7 +102,7 @@ if __name__ == "__main__":
         if j[:2] == "20":
             http_codes.append(j)
         elif j=="000":
-            http_codes.append(pycolor.RED_FLASH+" Domain Error? "+pycolor.END)
+            http_codes.append(pycolor.RED_FLASH+" 000 "+pycolor.END)
         else:
             http_codes.append(pycolor.RED_FLASH+" "+j+" "+pycolor.END)
 
