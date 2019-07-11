@@ -16,6 +16,7 @@ urllib3.disable_warnings(InsecureRequestWarning)
 from tabulate import tabulate
 
 pp = pprint.PrettyPrinter(indent=4)
+JST = timezone(timedelta(hours=+9), 'JST')
 
 url_path = "./url_list.txt"
 result_path = "./get_http_ssl_result.txt"
@@ -123,8 +124,9 @@ if __name__ == "__main__":
             table_url.append(url_)
     result = np.array([table_url,http_codes,ssl_results,check_ssl_limit(url_list)])
     table = result.T
-    headers = ["URL", "http","SSL","Date Limit"]
+    headers = ["URL", "http","SSL","Date Limit(UTC)"]
     ans_table=tabulate(table, headers, tablefmt="grid")
-    ans_table = ans_table + "\033["+str(len(ans_table.split("\n")))+"A" #末尾に'\033[nA'を追記し、カーソル位置をansの一番最初に移動
-    time.sleep(5)
+    #ans_table = ans_table + "\033["+str(len(ans_table.split("\n")))+"A" #末尾に'\033[nA'を追記し、カーソル位置をansの一番最初に移動
+    print("")
+    print(dt.now(JST))
     print(ans_table)
