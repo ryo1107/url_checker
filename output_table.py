@@ -20,6 +20,8 @@ JST = timezone(timedelta(hours=+9), 'JST')
 
 url_path = "./url_list.txt"
 result_path = "./get_http_ssl_result.txt"
+url_path = sys.argv[1]
+result_path = sys.argv[2]
 
 class pycolor:
     BLACK = '\033[30m'
@@ -86,6 +88,10 @@ def check_ssl_limit(url_list):
     return __result
 
 if __name__ == "__main__":
+    #url_path = sys.argv[1]
+    #result_path = sys.argv[2] 
+
+
     with open(url_path) as f:
         url_list = [s.strip() for s in f.readlines()]
     with open(result_path) as f:
