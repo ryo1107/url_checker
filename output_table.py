@@ -116,10 +116,10 @@ if __name__ == "__main__":
     for i in pre_ssl_results:
         if i=="Verify return code: 0 (ok)" or i==" Verify return code: 0 (ok)":
             ssl_results.append("OK")
-        elif i==" ":
-            ssl_results.append(pycolor.RED_FLASH+" Domain Error "+pycolor.END)
+        #elif i==" ":
+        #    ssl_results.append(pycolor.RED_FLASH+" Domain Error "+pycolor.END)
         else:
-            ssl_results.append(pycolor.RED_FLASH+" SSL Error "+pycolor.END)
+            ssl_results.append(pycolor.RED_FLASH+" Timeout/SSL Error "+pycolor.END)
     
     table_url=[]
 
