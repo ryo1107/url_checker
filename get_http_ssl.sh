@@ -11,7 +11,7 @@ do
         #mac
 	#ssl_result+=($(bash check_ssl_certs.sh $domain 2>/dev/null | tail -n 2 |grep Verify),)
 	#Linux
-	ssl_result+=($(timeout 5 bash check_ssl_certs.sh $domain 2>/dev/null | tail -n 2 |grep Verify),)
+	ssl_result+=($(timeout 2 bash check_ssl_certs.sh $domain 2>/dev/null | tail -n 2 |grep Verify),)
     fi
 done < ./$1
 
