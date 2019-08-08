@@ -7,7 +7,7 @@ do
         url=${line#*//}
         domain=${url%%/*}
         #echo $domain
-        http_code+=($(curl -H 'Cache-Control: no-cache' -LI $line -o /dev/null -w '%{http_code}\n' -s --connect-timeout 20),)
+        http_code+=($(curl -H 'Cache-Control: no-cache' -Li $line -o /dev/null -w '%{http_code}\n' -s --connect-timeout 20),)
         #mac
 	#ssl_result+=($(bash check_ssl_certs.sh $domain 2>/dev/null | tail -n 2 |grep Verify),)
 	#Linux
