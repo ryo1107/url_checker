@@ -46,5 +46,5 @@ bash master.sh
 # exit
 
 ```
-Ctrl+z
+Ctrl+c * n
 ```
